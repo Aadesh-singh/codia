@@ -5,7 +5,27 @@ const User = require('../models/user');
 
 // Rendering the Profiles page.
 module.exports.profile = function(req, res){
-    return res.end('<h1>Users Profile</h1>');
+    console.log(req.cookies);
+    if(req.cookies.user_id){
+        User.findOne({_id: req.cookies.user_id}, function(err, user){
+            if(err){ console.log('Error in fetching the details: ', err); return;}
+            if(user){
+                console.log(user);
+                return res.render('profile.ejs', {
+                    name: user.name,
+                    email: user.email,
+                    password: user.password,
+                    id: user._id,
+                    createdAt: user.createdAt
+                });
+            }
+            else{
+                res.redirect('back');
+            }
+        });
+    }else{
+        return res.redirect('/user/sign-in');
+    }
 }
 
 // Rendering the signup page.
@@ -60,4 +80,11 @@ module.exports.createSession = function(req, res){
             return res.redirect('/user/profile');
         }
     })
+}
+
+// handling signout
+
+module.exports.signout = function(req, res){
+    res.clearCookie("user_id");
+    return res.redirect('/user/sign-in');
 }
