@@ -1,5 +1,6 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
+const expressLayout = require('express-ejs-layouts');
 const port = 8000;
 const path = require('path');
 const app = express();
@@ -13,6 +14,8 @@ const signUp = require('./models/signUp');
 const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
+const MongoStore = require('connect-mongo');
+const { Mongoose } = require('mongoose');
 
 // use static files 
 app.use(express.static('./assets'));
@@ -26,10 +29,13 @@ app.use(cookieParser());
 
 
 // views
+app.use(expressLayout);
+app.set('layout', './layouts/main');
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, "views"));
 
 
+// mongo store is used to store the session cookie in the db
 app.use(session({
     name: 'codia',
     // TODO change the secret at the time of deployment in production mode
@@ -38,7 +44,16 @@ app.use(session({
     resave: false,
     cookie: {
         maxAge: (1000* 60* 100)
-    }
+    },
+    store: MongoStore.create(
+        {
+            mongoUrl: 'mongodb://localhost/codia_db',
+            autoRemove: 'disabled'
+        },
+        function(err){
+            console.log(err || 'connect-mongo-db ok');
+        }
+    )
 }));
 
 app.use(passport.initialize());

@@ -5,7 +5,7 @@ const User = require('../models/user');
 
 // Rendering the Profiles page.
 module.exports.profile = function(req, res){
-    return res.end('<h1>Users Profile</h1>');
+    return res.render('user_profile.ejs');
 }
 
 // Rendering the signup page.
@@ -44,5 +44,13 @@ module.exports.create = function(req, res){
 // Create session
 
 module.exports.createSession = function(req, res){
+    return res.redirect('/');
+}
+
+// destroy session
+
+module.exports.destroySession = function(req, res){
+    req.logout();
+
     return res.redirect('/');
 }
