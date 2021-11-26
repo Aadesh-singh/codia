@@ -17,15 +17,23 @@ const passportLocal = require('./config/passport-local-strategy');
 const MongoStore = require('connect-mongo');
 const { Mongoose } = require('mongoose');
 
-// use static files 
-app.use(express.static('./assets'));
+const sassMiddleware = require('node-sass-middleware-5');
+
+app.use(sassMiddleware({
+    src: './assets/scss',
+    dest: './assets/css',
+    debug: 'true',
+    outputStyle: 'extended',
+    prefix: '/css'
+}));
 
 // use cookie parser
 app.use(express.urlencoded());
 
 app.use(cookieParser());
 
-
+// use static files 
+app.use(express.static('./assets'));
 
 
 // views
