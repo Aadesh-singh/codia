@@ -7,8 +7,8 @@ const app = express();
 
 const db = require('./config/mongoose');
 const user = require('./models/user');
-const signIn = require('./models/signin');
-const signUp = require('./models/signUp');
+// const signIn = require('./models/signin');
+// const signUp = require('./models/signUp');
 
 // used for session cookies
 const session = require('express-session');

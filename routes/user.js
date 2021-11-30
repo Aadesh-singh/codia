@@ -5,6 +5,7 @@ const passport = require('passport');
 const userController = require('../controllers/users_controller');
 
 
+
 router.get('/profile',passport.checkAuthentication,passport.setAuthenticatedUser, userController.profile);
 
 // SignUp Route
