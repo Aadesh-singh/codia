@@ -18,20 +18,20 @@
 
             <div id="post-container">
                 <ul>
-                    <%for(let i of AllPosts) {%>
+                    <%for(let post of AllPosts) {%>
                         <li>
                             <p>
                                 <div>
-                                    <%= i.content%>
+                                    <%= post.content%>
                                 </div>
                                 <div>
                                     <small>
-                                       ~ <%= i.user.name %>
+                                       ~ <%= post.user.name %>
                                     </small>
                                 </div>
                                 <div>
                                     <small>
-                                        <%= i.createdAt%>
+                                        <%= post.createdAt%>
                                     </small>
                                 </div>
                             </p>
