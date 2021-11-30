@@ -32,7 +32,8 @@ module.exports.home = function(req, res){
             console.log('Error in finding Posts: ', err);
         }
         return res.render('hello.ejs', {
-            AllPosts: posts
+            AllPosts: posts,
+            user: req.user
         });
     });
 }

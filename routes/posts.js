@@ -3,6 +3,8 @@ const express = require('express');
 const router = express.Router();
 const postController = require('../controllers/post_controller');
 
-router.post('/create', postController.createPost);
+const passport = require('passport');
+
+router.post('/create',passport.checkAuthentication ,postController.createPost);
 
 module.exports = router;
