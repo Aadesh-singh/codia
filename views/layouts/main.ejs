@@ -11,7 +11,17 @@
 </head>
 <body>
     <%- include('_header')%>
-    <%- body%>
+    <div class="outer-div">
+        <aside class="one">
+            <div >
+                hello1
+            </div>
+        </aside>
+        <div class="two"><%- body%></div>
+        <aside class="three">
+            <div >hello3</div>
+        </aside>
+    </div>
     <%- include('_footer')%>
     
 </body>

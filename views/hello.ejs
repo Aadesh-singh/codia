@@ -11,8 +11,8 @@
             <h4>Posts</h4>
             <% if(locals.user) {%>
             <form action="/posts/create" id="new-post-form" method="POST">
-                <textarea name="content" cols="30" rows="2" placeholder="Type Here..." required></textarea>
-                <input type="submit" value="Post">
+                <textarea name="content" cols="63" rows="4" placeholder="Type Here to Add Post..." style="resize: none;" required></textarea>
+                <input type="submit" value="Post" style="padding: 0px 20px;">
             </form>
             <% } %>
 
@@ -21,33 +21,27 @@
                     <%for(let post of AllPosts) {%>
                         <li>
                             <p>
-                                <div>
+                                <div class="post-parent">
+                                    <small>
+                                        <span><%= post.user.name %></span>
+                                        <span class="dateTime">
+                                            <%= post.createdAt.toString().substring(0, 24)%>
+                                        </span>
+                                     </small>
                                     <%= post.content%>
                                 </div>
-                                <div>
-                                    <small>
-                                       ~ <%= post.user.name %>
-                                    </small>
-                                </div>
-                                <div>
-                                    <small>
-                                        <%= post.createdAt%>
-                                    </small>
-                                </div>
-                                <div class="comments-parent">
+                                <div class="comment-container">
                                     <ul id="post-comment-<%= post._id%>">
                                         <% for( let comment of post.comments) {%>
                                             <li>
                                                 <p>
-                                                    <div>
-                                                        <%= comment.content%>
+                                                    <div class="comments-parent">
+                                                        <small>
+                                                            <span class="name"><%= comment.user.name%></span>
+                                                            <span class="dateTime"><%= comment.createdAt.toString().substring(0, 24)%></span>
+                                                        </small>
+                                                        <div> <%= comment.content%> </div>
                                                     </div>
-                                                    <small>
-                                                        <%= comment.user.name%>
-                                                    </small>
-                                                    <small>
-                                                        <%= comment.createdAt%>
-                                                    </small>
                                                 </p>
                                             </li>
                                         <%}%>
@@ -55,7 +49,7 @@
                                 </div>
                                 <% if(locals.user){ %>
                                     <form action="/comments/create" method="POST">
-                                        <input type="text" name="content" required>
+                                        <input type="text" name="content" placeholder="Type Here to Add Comment..." required>
                                         <input type="hidden" name="post" value="<%= post._id%>">
                                         <input type="submit" value="Comment">
                                     </form>

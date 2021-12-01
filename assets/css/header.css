@@ -1,7 +1,11 @@
 header {
+  z-index: 10;
   display: flex;
   justify-content: space-between;
   padding: 14px;
+  position: fixed;
+  width: 100%;
+  top: 0;
   font-size: 1.3rem;
   background: #e8a14b; }
   header ul {
@@ -9,5 +13,7 @@ header {
     padding: 0;
     display: flex;
     justify-content: space-between;
-    width: 21%;
-    list-style: none; }
+    width: 17%;
+    list-style: none;
+    position: relative;
+    right: 30px; }

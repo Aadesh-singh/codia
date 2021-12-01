@@ -4,6 +4,88 @@ body {
 
 main {
   min-height: 69vh;
-  margin-top: 45px;
-  font-size: 2rem;
-  padding: 20px; }
+  font-size: 1.3rem;
+  border: 2px solid orange;
+  padding: 40px 40px;
+  background-color: #f6f6f6; }
+
+.outer-div {
+  display: flex;
+  margin-top: 82px; }
+
+aside {
+  position: fixed; }
+
+.one {
+  left: 17px; }
+
+.two {
+  width: 50%;
+  margin: auto; }
+
+.three {
+  right: 17px; }
+
+#feed-posts h4 {
+  font-size: 1.4rem; }
+
+#feed-posts form {
+  display: flex; }
+  #feed-posts form textarea {
+    border-radius: 8px 0px 0px 7px;
+    border: 2px solid orange;
+    border-right: 0; }
+  #feed-posts form input[type="submit"] {
+    border-radius: 0px 8px 7px 0px;
+    border: 2px solid orange;
+    background-color: orange;
+    color: white; }
+
+#post-container ul {
+  list-style: none;
+  padding: 0px; }
+  #post-container ul li {
+    padding: 10px;
+    background-color: #fff;
+    margin: 13px 0px;
+    z-index: -1;
+    border-radius: 13px; }
+  #post-container ul .post-parent {
+    position: relative;
+    border: 2px solid orange;
+    padding: 9px 6px 70px 6px;
+    border-radius: 13px; }
+    #post-container ul .post-parent small {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      margin-bottom: 15px; }
+      #post-container ul .post-parent small .dateTime {
+        flex-basis: 22%;
+        font-size: 0.6rem; }
+  #post-container ul .comment-container ul {
+    list-style: none; }
+    #post-container ul .comment-container ul li {
+      padding: 4px 4px 4px 20px;
+      font-size: 1.1rem;
+      margin: 0; }
+      #post-container ul .comment-container ul li .comments-parent {
+        border: 1px solid black;
+        padding: 7px 4px;
+        border-radius: 6px;
+        zoom: 0.8; }
+        #post-container ul .comment-container ul li .comments-parent small {
+          display: flex;
+          justify-content: space-between; }
+          #post-container ul .comment-container ul li .comments-parent small .dateTime {
+            flex-basis: 18%;
+            font-size: 0.6rem; }
+  #post-container ul input[type="text"] {
+    padding: 7px;
+    width: 83%;
+    margin-top: 20px;
+    border-radius: 8px 0px 0px 7px;
+    border: 2px solid orange;
+    border-right: 0; }
+  #post-container ul input[type="submit"] {
+    margin-top: 20px; }
