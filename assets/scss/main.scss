@@ -21,6 +21,33 @@ aside{
 }
 .one{
     left: 17px;
+    ul{
+        list-style: none;
+        text-decoration: none;
+        padding: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 146px;
+        li{
+            width: 100%;
+            padding: 11px 38px;
+            border: 2px solid orange;
+            a{
+                text-decoration: none;
+                color: orange;
+            }
+            a:hover{
+                color: white !important;
+                background-color: orange;
+            }
+        }
+        li:hover{
+            color: white !important;
+            background-color: orange;
+        }
+    }
 }
 .two{
     width: 50%;
@@ -86,6 +113,7 @@ aside{
                     padding: 4px 4px 4px 20px;
                     font-size: 1.1rem;
                     margin: 0;
+                    height: 58px;
                     .comments-parent{
                         border: 1px solid black;
                         padding: 7px 4px;

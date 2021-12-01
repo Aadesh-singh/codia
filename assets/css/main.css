@@ -18,6 +18,28 @@ aside {
 
 .one {
   left: 17px; }
+  .one ul {
+    list-style: none;
+    text-decoration: none;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 146px; }
+    .one ul li {
+      width: 100%;
+      padding: 11px 38px;
+      border: 2px solid orange; }
+      .one ul li a {
+        text-decoration: none;
+        color: orange; }
+      .one ul li a:hover {
+        color: white !important;
+        background-color: orange; }
+    .one ul li:hover {
+      color: white !important;
+      background-color: orange; }
 
 .two {
   width: 50%;
@@ -68,7 +90,8 @@ aside {
     #post-container ul .comment-container ul li {
       padding: 4px 4px 4px 20px;
       font-size: 1.1rem;
-      margin: 0; }
+      margin: 0;
+      height: 58px; }
       #post-container ul .comment-container ul li .comments-parent {
         border: 1px solid black;
         padding: 7px 4px;

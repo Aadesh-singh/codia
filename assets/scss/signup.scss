@@ -1,0 +1,24 @@
+main {
+    form {
+        display: flex;
+        flex-direction: column;
+        margin: 73px 65px;
+        width: 71%;
+        justify-content: space-between;
+        height: 32vh;
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"]{
+            padding: 6px;
+            font-size: 1rem;
+        }
+        input[type="submit"]{
+            background: orange;
+            border: 2px solid orange;
+            cursor: pointer;
+            color: white;
+            padding: 6px;
+        }
+    }
+}
