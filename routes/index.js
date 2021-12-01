@@ -9,5 +9,7 @@ router.get('/aadesh', homeController.aadesh);
 router.use('/user', require('./user'));
 router.use('/edit', require('./edit'));
 router.use('/posts', require('./posts'));
+// action route for Comment
+router.use('/comments', require('./comments'));
 
 module.exports = router;

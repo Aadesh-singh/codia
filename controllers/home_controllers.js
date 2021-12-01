@@ -27,7 +27,15 @@ module.exports.home = function(req, res){
 
     // After Populating the user in post schema user gets replaced by its object and we can simply use that object using dot notations.
 
-    Post.find({}).populate('user').exec(function(err, posts){     //.exec() is used when we write callback function in a querry like this i.e. saperate.
+    Post.find({})
+    .populate('user')
+    .populate({
+        path: 'comments',
+        populate: {
+            path: 'user'
+        }
+    })
+    .exec(function(err, posts){     //.exec() is used when we write callback function in a querry like this i.e. saperate.
         if(err){
             console.log('Error in finding Posts: ', err);
         }
