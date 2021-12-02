@@ -29,17 +29,34 @@ aside {
     height: 146px; }
     .one ul li {
       width: 100%;
-      padding: 11px 38px;
-      border: 2px solid orange; }
+      width: 142px;
+      padding: 8px 18px; }
       .one ul li a {
+        border: 2px solid orange;
+        width: 100%;
         text-decoration: none;
+        padding: 11px 38px;
         color: orange; }
       .one ul li a:hover {
         color: white !important;
         background-color: orange; }
-    .one ul li:hover {
-      color: white !important;
-      background-color: orange; }
+      .one ul li a.home {
+        padding: 9px 81px 9px 59px;
+        position: relative;
+        left: -19px; }
+      .one ul li a.profile {
+        padding: 9px 78px 9px 59px;
+        position: relative;
+        left: -19px; }
+      .one ul li a.signin {
+        padding: 12px 42px 13px 35px;
+        position: relative;
+        left: -19px; }
+      .one ul li a.signup {
+        position: relative;
+        left: -19px; }
+      .one ul li a.signout:hover {
+        background-color: red; }
 
 .two {
   width: 50%;
