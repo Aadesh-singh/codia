@@ -6,7 +6,7 @@ const userController = require('../controllers/users_controller');
 
 
 
-router.get('/profile',passport.checkAuthentication,passport.setAuthenticatedUser, userController.profile);
+router.get('/profile/:id',passport.checkAuthentication,passport.setAuthenticatedUser, userController.profile);
 
 // SignUp Route
 router.get('/sign-up',passport.checkUnauthentication, userController.signup);
@@ -24,6 +24,8 @@ router.post('/create-session', passport.authenticate(
     {failureRedirect: '/user/sign-in'},
 ), userController.createSession);
 
+// update user data
+router.post('/update/:id', passport.checkAuthentication, userController.update);
 
 // sign-out
 router.get('/sign-out', userController.destroySession);

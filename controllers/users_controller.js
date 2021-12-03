@@ -5,7 +5,15 @@ const User = require('../models/user');
 
 // Rendering the Profiles page.
 module.exports.profile = function(req, res){
-    return res.render('user_profile.ejs');
+    User.findById(req.params.id, function(err, user){
+        if(err){
+            console.log('Error in finding user', err);
+            return;
+        }
+        return res.render('user_profile.ejs', {
+            profile_user: user
+        });
+    });
 }
 
 // Rendering the signup page.
@@ -53,4 +61,21 @@ module.exports.destroySession = function(req, res){
     req.logout();
 
     return res.redirect('/');
+}
+
+// updateUser
+
+module.exports.update = function(req, res){
+    if(req.user.id == req.params.id){
+        User.findByIdAndUpdate(req.params.id, req.body , function(err, user){
+            if(err){
+                console.log('Error in updating the user: ', err);
+                return;
+            }
+            console.log(user);
+            return res.redirect('/');
+        });
+    } else {
+        return res.status(401).send('Unauthorized');
+    }
 }

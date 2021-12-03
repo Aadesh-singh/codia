@@ -18,7 +18,7 @@
                 <ul>
                     <li><a class="home" href="/">Home</a></li>
                     <% if(locals.user) {%>
-                        <li><a class="profile" href="/user/profile">Profile</a></li>
+                        <li><a class="profile" href="/user/profile/<%= user._id%>">Profile</a></li>
                         <li><a class="signout" href="/user/sign-out">Sign-Out</a></li>
                     <%} else {%>
                         <li><a class="signup" href="/user/sign-up">Sign-up</a></li>
@@ -28,9 +28,7 @@
             </div>
         </aside>
         <div class="two"><%- body%></div>
-        <aside class="three">
-            <div >hello3</div>
-        </aside>
+        
     </div>
     <%- include('_footer')%>
     

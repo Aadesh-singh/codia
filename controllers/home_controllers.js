@@ -1,4 +1,5 @@
 const Post = require('../models/post');
+const User = require('../models/user');
 
 module.exports.home = function(req, res){
     // console.log(req.cookies);
@@ -39,9 +40,17 @@ module.exports.home = function(req, res){
         if(err){
             console.log('Error in finding Posts: ', err);
         }
-        return res.render('hello.ejs', {
-            AllPosts: posts,
-            user: req.user
+        // find the All user and send it to hello.ejs
+        User.find({}, function(err, users){
+            if(err){
+                console.log('Error in finding the user: ', err);
+                return;
+            }
+            return res.render('hello.ejs', {
+                AllPosts: posts,
+                user: req.user,
+                all_Users: users
+            });
         });
     });
 }

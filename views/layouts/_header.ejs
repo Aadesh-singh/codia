@@ -2,7 +2,7 @@
     <div><a href="/">Codia <sub>A new Social Media</sub></a></div>
     <ul>
         <% if(locals.user) { %>
-            <li><a href="/user/profile"><%= user.name%></a></li>
+            <li><a href="/user/profile/<%= user._id%>"><%= user.name%></a></li>
             <li><a href="/user/sign-out">Sign-Out</a></li>
         <%} else {%>
             <li><a href="/user/sign-in">Sign-In</a></li>
