@@ -1,9 +1,9 @@
 const Post = require('../models/post');
 const Comment = require('../models/comment');
 
-module.exports.posts = function(req, res){
-    return res.end('<h1>all posts</h1>');
-}
+// module.exports.posts = function(req, res){
+//     return res.end('<h1>all posts</h1>');
+// }
 
 module.exports.createPost = function(req, res){
     Post.create({
@@ -19,17 +19,27 @@ module.exports.createPost = function(req, res){
     });
 }
 
-module.exports.createComment = function(req, res){
-    Comment.create({
-        content: req.body.content,
-        user: req.user._id,
-        // post: req    TODO -start point  
-    }, function(err, comment){
+
+module.exports.destroy = function(req, res){
+    Post.findById(req.params.id, function(err, post){
         if(err){
-            console.log('Error while creating the comment: ', err);
+            console.log('Error in finding the post: ',err);
             return;
         }
-        console.log('Comment Added successfully: ', comment);
-        return res.redirect('back');
+        //req.user._id will return a object id while req.user.id returns that same object id in string format.
+        if(post.user == req.user.id){
+            post.remove();
+
+            Comment.deleteMany({post: req.params.id}, function(err){
+                if(err){
+                    console.log('error in deleting comments: ', err);
+                    return;
+                }
+                return res.redirect('back');
+            });
+        } else {
+            console.log('You are not authorised to commit this act!!!');
+            return res.redirect('back'); 
+        } 
     });
 }

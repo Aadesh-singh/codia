@@ -100,8 +100,15 @@ aside {
       font-size: 0.9rem;
       margin-bottom: 15px; }
       #post-container ul .post-parent small .dateTime {
-        flex-basis: 22%;
-        font-size: 0.6rem; }
+        flex-basis: 25%;
+        font-size: 0.6rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center; }
+        #post-container ul .post-parent small .dateTime a {
+          font-size: 1.1rem;
+          color: orange; }
   #post-container ul .comment-container ul {
     list-style: none; }
     #post-container ul .comment-container ul li {

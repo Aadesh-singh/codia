@@ -124,8 +124,16 @@ aside{
                 font-size: 0.9rem;
                 margin-bottom: 15px;
                 .dateTime{
-                    flex-basis: 22%;
+                    flex-basis: 25%;
                     font-size: 0.6rem;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    a{
+                        font-size: 1.1rem;
+                        color: orange;
+                    }
                 }
             }
         }
