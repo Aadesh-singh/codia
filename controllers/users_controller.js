@@ -44,7 +44,7 @@ module.exports.create = function(req, res){
 // Create session
 
 module.exports.createSession = function(req, res){
-    return res.redirect('/user/profile');
+    return res.redirect('/');
 }
 
 // destroy session
