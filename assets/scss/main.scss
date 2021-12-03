@@ -10,6 +10,8 @@ main{
     border: 2px solid orange;
     padding: 40px 40px;
     background-color: #f6f6f6;
+    margin-bottom: 29px;
+    border-radius: 8px;
 }
 .outer-div{
     display: flex;
@@ -155,8 +157,16 @@ aside{
                             display: flex;
                             justify-content: space-between;
                             .dateTime{
-                                flex-basis: 18%;
+                                flex-basis: 21%;
                                 font-size: 0.6rem;
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: space-between;
+                                align-items: center;
+                                a{
+                                    font-size: 0.89rem;
+                                    color: orange;
+                                }
                             }
                         }
                     }

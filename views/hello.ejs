@@ -41,7 +41,12 @@
                                                     <div class="comments-parent">
                                                         <small>
                                                             <span class="name"><%= comment.user.name%></span>
-                                                            <span class="dateTime"><%= comment.createdAt.toString().substring(0, 24)%></span>
+                                                            <span class="dateTime">
+                                                                <%if(locals.user && (comment.user.id == locals.user.id || locals.user.id == post.user.id)) {%>
+                                                                    <a href="/comments/destroy/<%= comment._id%>"><i class="fas fa-trash-alt"></i></a>
+                                                                <%}%>
+                                                                <%= comment.createdAt.toString().substring(0, 24)%>
+                                                            </span>
                                                         </small>
                                                         <div> <%= comment.content%> </div>
                                                     </div>

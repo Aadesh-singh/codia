@@ -7,7 +7,9 @@ main {
   font-size: 1.3rem;
   border: 2px solid orange;
   padding: 40px 40px;
-  background-color: #f6f6f6; }
+  background-color: #f6f6f6;
+  margin-bottom: 29px;
+  border-radius: 8px; }
 
 .outer-div {
   display: flex;
@@ -125,8 +127,15 @@ aside {
           display: flex;
           justify-content: space-between; }
           #post-container ul .comment-container ul li .comments-parent small .dateTime {
-            flex-basis: 18%;
-            font-size: 0.6rem; }
+            flex-basis: 21%;
+            font-size: 0.6rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center; }
+            #post-container ul .comment-container ul li .comments-parent small .dateTime a {
+              font-size: 0.89rem;
+              color: orange; }
   #post-container ul input[type="text"] {
     padding: 7px;
     width: 83%;
