@@ -1,6 +1,8 @@
 const Post = require('../models/post');
 const User = require('../models/user');
 
+
+// // without async await
 module.exports.home = function(req, res){
     // console.log(req.cookies);
     // res.cookie('user_id', 25);
@@ -54,6 +56,9 @@ module.exports.home = function(req, res){
         });
     });
 }
+
+
+
 
 module.exports.aadesh = function(req, res){
     return res.end('<h1>HI aadesh</h1>');
