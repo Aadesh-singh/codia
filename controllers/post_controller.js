@@ -5,41 +5,39 @@ const Comment = require('../models/comment');
 //     return res.end('<h1>all posts</h1>');
 // }
 
-module.exports.createPost = function(req, res){
-    Post.create({
-        content: req.body.content,
-        user: req.user._id
-    }, function(err, post){
-        if(err){
-            console.log(`Error Occured while creating the Post `, err);
-            return;
-        }
-        console.log('Post Created: ',post);
+
+module.exports.createPost = async function(req, res){
+    try{
+        const post = await Post.create({
+            content: req.body.content,
+            user: req.user._id
+        });
+        console.log('Post Created: ', post);
         return res.redirect('back');
-    });
+    } catch(err){
+        console.log('Error while creating the Post', err);
+        return;
+    }
+
 }
 
 
-module.exports.destroy = function(req, res){
-    Post.findById(req.params.id, function(err, post){
-        if(err){
-            console.log('Error in finding the post: ',err);
-            return;
-        }
-        //req.user._id will return a object id while req.user.id returns that same object id in string format.
+module.exports.destroy = async function(req, res){
+    try {
+        const post = await Post.findById(req.params.id);
+
         if(post.user == req.user.id){
             post.remove();
 
-            Comment.deleteMany({post: req.params.id}, function(err){
-                if(err){
-                    console.log('error in deleting comments: ', err);
-                    return;
-                }
-                return res.redirect('back');
-            });
+            const comment = await Comment.deleteMany({post: req.params.id});
+            console.log('Post deleted successfully: ', post);
+            return res.redirect('back');
         } else {
-            console.log('You are not authorised to commit this act!!!');
-            return res.redirect('back'); 
-        } 
-    });
+            console.log('You are Unauthorized !!!');
+            return res.redirect('back');
+        }
+    } catch (err) {
+        console.log('Error: ', err);
+        return;
+    }
 }
