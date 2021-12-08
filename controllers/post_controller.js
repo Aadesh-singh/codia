@@ -12,11 +12,12 @@ module.exports.createPost = async function(req, res){
             content: req.body.content,
             user: req.user._id
         });
-        console.log('Post Created: ', post);
+
+        req.flash('success', 'Post Published Successfully!!!');
         return res.redirect('back');
     } catch(err){
-        console.log('Error while creating the Post', err);
-        return;
+        req.flash('error', err);
+        return res.redirect('back');
     }
 
 }
@@ -30,14 +31,15 @@ module.exports.destroy = async function(req, res){
             post.remove();
 
             const comment = await Comment.deleteMany({post: req.params.id});
-            console.log('Post deleted successfully: ', post);
+            req.flash('success', 'Post Deleted Successfully');
             return res.redirect('back');
         } else {
-            console.log('You are Unauthorized !!!');
+            
+            req.flash('error', 'You are Not Authorised for this act');
             return res.redirect('back');
         }
     } catch (err) {
-        console.log('Error: ', err);
+        req.flash('error', err);
         return;
     }
 }
