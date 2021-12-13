@@ -13,6 +13,15 @@ module.exports.createPost = async function(req, res){
             user: req.user._id
         });
 
+        if(req.xhr){
+            return res.status(200).json({
+                data: {
+                    post: post
+                },
+                message: 'Post Created!'
+            });
+        }
+
         req.flash('success', 'Post Published Successfully!!!');
         return res.redirect('back');
     } catch(err){
@@ -31,6 +40,16 @@ module.exports.destroy = async function(req, res){
             post.remove();
 
             const comment = await Comment.deleteMany({post: req.params.id});
+
+            if(req.xhr){
+                return res.status(200).json({
+                    data: {
+                        post_id: req.params.id
+                    },
+                    message: 'Post deleted'
+                });
+            }
+
             req.flash('success', 'Post Deleted Successfully');
             return res.redirect('back');
         } else {
