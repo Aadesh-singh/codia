@@ -7,7 +7,7 @@ module.exports.create = async function(req, res){
     try {
         const post = await Post.findById(req.body.post);
         if(post){
-            const comment = await Comment.create({
+            let comment = await Comment.create({
                 content: req.body.content,
                 post: req.body.post,
                 user: req.user._id
@@ -15,6 +15,16 @@ module.exports.create = async function(req, res){
             post.comments.push(comment);        // Updating the existing data
             post.save();                        // saving the updated data - while updating the existing document in DB, it only update it on the ram hence we have to save the data like this to reflect on DB.
 
+            if(req.xhr){
+                comment = await comment.populate('user', 'name');
+                return res.status(200).json({
+                    data: {
+                        comment: comment,
+                        post_id: req.body.post
+                    },
+                    message: 'comment created Successfully'
+                });
+            }
             
             req.flash('success', 'You comment is added');
             return res.redirect('/');
@@ -39,6 +49,15 @@ module.exports.destroy = async function(req, res){
             //while deleting a element in database we had to update that document like in this case when we have to delete element of array in post document then we have to find post and update the comments in it.
             const post = await Post.findByIdAndUpdate(postId, {$pull: {comments: req.params.id}});
             
+            if(req.xhr){
+                return res.status(200).json({
+                    data: {
+                        comment_id: req.params.id
+                    },
+                    message: 'Comment Deleted!!'
+                });
+            }
+
             req.flash('success', 'Comment Deleted Successfully');
             return res.redirect('/');
         }
