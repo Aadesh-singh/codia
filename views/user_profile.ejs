@@ -11,14 +11,20 @@
 <body>
     <main>
         <h1>User's Profile </h1>
+        <p>
+            <%if(profile_user.avatar){%>
+            <img src="<%= profile_user.avatar%>" alt="Avatar Image" width="100">
+            <%}%>
+        </p>
         <p><%= profile_user.name%></p>
         <p><%= profile_user.email%></p>
 
         <% if(user.id == profile_user.id){ %>
             <h4>Update Profile</h4>
-            <form action="/user/update/<%= user._id%>" method="POST">
+            <form action="/user/update/<%= user._id%>" enctype="multipart/form-data" method="POST">
                 <input type="text" name="name" placeholder="Your Name" value="<%= profile_user.name%>" required>
                 <input type="email" name="email" placeholder="Your Email" value="<%= profile_user.email%>" required>
+                <input type="file" name="avatar" id="" placeholder="Profile Picture">
                 <input type="submit" value="Update">
             </form>
         <%}%>

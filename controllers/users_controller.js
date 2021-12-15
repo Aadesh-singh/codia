@@ -67,10 +67,25 @@ module.exports.destroySession = function(req, res){
 module.exports.update = async function(req, res){
     try {
         if(req.user.id == req.params.id){
-            const user = await User.findByIdAndUpdate(req.params.id, req.body);
+            // const user = await User.findByIdAndUpdate(req.params.id, req.body);
+            const user = await User.findById(req.params.id);
+            User.uploadedAvatar(req, res, function(err){
+                if(err){
+                    console.log('****Multer Error', err);
+                }
+                console.log(req.file);
+                user.name = req.body.name;
+                user.email = req.body.email;
+                 
+                if(req.file){
+                    // this is saving the path of uploaded file into the avatar field in the user
+                    user.avatar = User.avatarPath + '/' + req.file.filename;
+                }
+                user.save();
+                req.flash('success', 'User Updated Successfully');
+                return res.redirect('back');
+            });
             
-            req.flash('success', 'User Updated Successfully');
-            return res.redirect('back');
         } else{
             req.flash('error', 'You are Not Authorised for this act');
             return res.status(401).send('Unauthorized');

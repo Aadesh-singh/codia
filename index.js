@@ -37,6 +37,8 @@ app.use(cookieParser());
 // use static files 
 app.use(express.static('./assets'));
 
+// make the uplaods available for browser
+app.use('/uploads', express.static(__dirname + '/uploads'));
 
 // views
 app.use(expressLayout);
