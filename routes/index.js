@@ -12,4 +12,7 @@ router.use('/posts', require('./posts'));
 // action route for Comment
 router.use('/comments', require('./comments'));
 
+// for api
+router.use('/api', require('./api'));
+
 module.exports = router;
