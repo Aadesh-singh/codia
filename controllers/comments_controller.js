@@ -1,5 +1,6 @@
 const Comment = require('../models/comment');
 const Post = require('../models/post');
+const commentsMailer = require('../mail/comment_mail');
 
 
 // while creating comment append the comment id in Post schema itself.
@@ -15,8 +16,12 @@ module.exports.create = async function(req, res){
             post.comments.push(comment);        // Updating the existing data
             post.save();                        // saving the updated data - while updating the existing document in DB, it only update it on the ram hence we have to save the data like this to reflect on DB.
 
+            //this line will populaye user field with its name and email
+            comment = await comment.populate('user', 'name email');
+            // send email to user
+            commentsMailer.newComment(comment); 
             if(req.xhr){
-                comment = await comment.populate('user', 'name');
+                
                 return res.status(200).json({
                     data: {
                         comment: comment,
