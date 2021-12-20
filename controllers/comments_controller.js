@@ -2,6 +2,10 @@ const Comment = require('../models/comment');
 const Post = require('../models/post');
 const commentsMailer = require('../mail/comment_mail');
 
+// for parallel jobs
+const queue = require('../config/kue');
+const commentEmailWorker = require('../workers/comment_email_workers');
+
 
 // while creating comment append the comment id in Post schema itself.
 module.exports.create = async function(req, res){
@@ -19,7 +23,16 @@ module.exports.create = async function(req, res){
             //this line will populaye user field with its name and email
             comment = await comment.populate('user', 'name email');
             // send email to user
-            commentsMailer.newComment(comment); 
+            // commentsMailer.newComment(comment); 
+            
+            let job = queue.create('emails', comment).save(function(err){
+                if(err){
+                    console.log('Error in sending to the queue: ', err);
+                    return;
+                }
+                console.log('job enqueued ', job.id);
+            });
+
             if(req.xhr){
                 
                 return res.status(200).json({

@@ -2,7 +2,9 @@
 const User = require('../models/user');
 const fs = require('fs');
 const path = require('path');
-
+const ForgetPassword = require('../models/forget-password');
+const crypto = require('crypto')
+const forgetPasswordMailer = require('../mail/forgetPasswordTokenMailer');
 
 // Rendering the Profiles page.
 module.exports.profile = async function(req, res){
@@ -99,4 +101,74 @@ module.exports.update = async function(req, res){
         req.flash('error', err);
         return res.redirect('back');
     }
+}
+
+// Forget Password
+
+module.exports.forgetPassword = function(req, res){
+    return res.render('forget-password.ejs');
+}
+
+module.exports.enterPass = function(req, res){
+    console.log(req.query.accesstoken);
+    return res.render('forget-password-pass.ejs', {
+        accessToken: req.query.accesstoken
+    });
+}
+
+module.exports.updatePassword = function(req, res){
+    if(req.body.password == req.body.cfPassword){
+        ForgetPassword.findOne({accessToken: req.body.accesstoken}, function(err, token){
+            if(err){
+                console.log('Error in finding token', err);
+                return;
+            }
+            if(token.isValid != false){
+                token.isValid = false;
+                User.findByIdAndUpdate(token.user._id, {password: req.body.password}, function(err, user){
+                    if(err){
+                        console.log('Error in finding the user: ', err);
+                        return;
+                    }
+                    else{
+                        console.log('password Updated successfully', user);
+                        return res.redirect('/user/sign-in');
+                    }
+                });
+            } else{
+                return res.end('<h1>Your token is invalid</h1>');
+            }
+        });
+    } else{
+        console.log('Password and Confirm Password dont match');
+        return res.redirect('back');
+    }
+}
+
+module.exports.sendEmail = function(req, res){
+    User.findOne({email: req.body.email}, function(err, user){
+        if(err){
+            console.log('Error in finding user', err);
+            return res.redirect('back');
+        }
+        if(!user){
+            console.log('Invalid user sign-up instead');
+            return res.redirect('/user/sign-up');
+        }
+        ForgetPassword.create({
+            user: user,
+            accessToken: crypto.randomBytes(20).toString('hex'),
+            isValid: true
+        }, function(err, token){
+            if(err){
+                console.log('Error in creating the token');
+                return;
+            }
+            console.log("Here is token",token);
+            forgetPasswordMailer.newPassword(token, req.body.email);
+            return res.end(`<h1>A link for resetting password is sent on you email: ${req.body.email.substring(0,4)}****@gmail.com</h1>`);
+        });
+
+    });
+
 }
