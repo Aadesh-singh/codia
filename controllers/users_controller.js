@@ -125,6 +125,7 @@ module.exports.updatePassword = function(req, res){
             }
             if(token.isValid != false){
                 token.isValid = false;
+                token.save();
                 User.findByIdAndUpdate(token.user._id, {password: req.body.password}, function(err, user){
                     if(err){
                         console.log('Error in finding the user: ', err);
