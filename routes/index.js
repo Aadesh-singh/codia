@@ -12,6 +12,9 @@ router.use('/posts', require('./posts'));
 // action route for Comment
 router.use('/comments', require('./comments'));
 
+// action route for likes
+router.use('/likes', require('./likes'));
+
 // for api
 router.use('/api', require('./api'));
 

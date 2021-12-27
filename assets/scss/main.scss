@@ -141,6 +141,26 @@ aside{
                 }
             }
         }
+        .un-auth-like{
+            font-size: 1rem;
+            color: orange;
+            border: 2px solid;
+            position: relative;
+            width: fit-content;
+            padding: 1px 4px;
+            top: 8px;        
+        }
+        a.like{
+            color: orange;
+        border: 2px solid;
+        padding: 2px 8px;
+        font-size: 0.9rem;
+        text-decoration: none;
+        }
+        a.liked{
+            background: orange;
+            color: white !important;
+        }
         .comment-container{
             // position: relative;
             ul{
@@ -149,17 +169,18 @@ aside{
                     padding: 4px 4px 4px 20px;
                     font-size: 1.1rem;
                     margin: 0;
-                    height: 58px;
+                    min-height: 63px;
                     .comments-parent{
                         border: 1px solid black;
                         padding: 7px 4px;
                         border-radius: 6px;
                         zoom: 0.8;
+                        min-height: 42px;
                         small{
                             display: flex;
                             justify-content: space-between;
                             .dateTime{
-                                flex-basis: 21%;
+                                flex-basis: 35%;
                                 font-size: 0.6rem;
                                 display: flex;
                                 flex-direction: row;
@@ -168,6 +189,14 @@ aside{
                                 a{
                                     font-size: 0.89rem;
                                     color: orange;
+                                }
+                                div{
+                                    font-size: 0.8rem;
+                                    color: orange;
+                                    border: 2px solid;
+                                    position: relative;
+                                    width: fit-content;
+                                    padding: 1px 4px;
                                 }
                             }
                         }

@@ -30,6 +30,7 @@ class PostComments{
                     pSelf.deleteComment($(' .delete-comment-button', newComment));
                     // form reset
                     $(`#post-${postId}-comments-form`)[0].reset();
+                    new ToggleLike($(' .like', newComment));
                     new Noty({
                         theme: 'relax',
                         text: 'Comment Added',
@@ -52,8 +53,11 @@ class PostComments{
             <div class="comments-parent">
                 <small>
                     <span class="name">${ comment.user.name}</span>
+
                     <span class="dateTime">
-                        
+                    <a id="like-${ comment._id}" data-likes="0" class="like" href="/likes/toggle/?id=${ comment._id}&type=Comment">
+                        <i class="fas fa-thumbs-up"></i> 0 Like
+                    </a> 
                             <a class="delete-comment-button" href="/comments/destroy/${ comment._id}"><i class="fas fa-trash-alt"></i></a>
                         
                             ${ comment.createdAt.toString().substring(0, 24)}

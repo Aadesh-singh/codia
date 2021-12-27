@@ -36,4 +36,21 @@
 
     <script src="/js/home_post_comments.js"></script>
     <script src="/js/home_posts.js"></script>
+    <script src="/js/likeables.js"></script>
 </body>
+<script>
+    var btns = document.querySelectorAll('a.like');
+    var icons = document.querySelectorAll('a.like i');
+    console.log(icons);
+    for(let btn = 0; btn< btns.length; btn++){
+        btns[btn].addEventListener('click', function(){
+            console.log('function called');
+            btns[btn].classList.toggle('liked');
+        });
+    }
+
+    $('.like').each(function(){
+        let self = this;
+        let toggleLike = new ToggleLike(self);
+    })
+</script>

@@ -1,7 +1,7 @@
 const Comment = require('../models/comment');
 const Post = require('../models/post');
 const commentsMailer = require('../mail/comment_mail');
-
+const Like = require('../models/like');
 // for parallel jobs
 const queue = require('../config/kue');
 const commentEmailWorker = require('../workers/comment_email_workers');
@@ -63,8 +63,8 @@ module.exports.destroy = async function(req, res){
             let postId =comment.post;
             
             comment.remove();
-            
             //while deleting a element in database we had to update that document like in this case when we have to delete element of array in post document then we have to find post and update the comments in it.
+            const like = await Like.deleteMany({likable: req.params.id, onModel: 'Comment'});
             const post = await Post.findByIdAndUpdate(postId, {$pull: {comments: req.params.id}});
             
             if(req.xhr){

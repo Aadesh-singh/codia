@@ -4,6 +4,14 @@
             <small>
                 <span class="name"><%= comment.user.name%></span>
                 <span class="dateTime">
+                    <% if(locals.user){%>
+                        <a id="like-<%= comment._id%>" data-likes="<%= comment.likes.length %>" class="like" href="/likes/toggle/?id=<%= comment._id%>&type=Comment">
+                            <i class="fas fa-thumbs-up"></i> <%= comment.likes.length%> Like
+                        </a>    
+                    <%} else{%>
+                            <div class="un-auth-like2"><i class="fas fa-thumbs-up"></i> <%= comment.likes.length%> Like</div>
+                    <%}%>
+
                     <%if(locals.user && (comment.user.id == locals.user.id || locals.user.id == post.user.id)) {%>
                         <a class="delete-comment-button" href="/comments/destroy/<%= comment._id%>"><i class="fas fa-trash-alt"></i></a>
                     <%}%>
