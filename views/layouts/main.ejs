@@ -29,11 +29,49 @@
                     <%}%>
                 </ul>
             </div>
+            <%if(locals.user){%>
+                <div class="chat-box visible">
+                    <div id="user-chat-box" class="chat">
+                        <div class="received">some text</div>
+                        <div class="sent">some text</div>
+                        <div class="received">some text</div>
+                        <div class="sent">some text</div>
+                        <div class="sent">some text</div>
+                        <div class="sent">some text</div>
+                        <div class="received">some text</div>
+                        <div class="received">some text</div>
+                        <div class="received">some text</div>
+                        <div class="received">some text</div>
+                        <div class="received">some text</div>
+                        <div class="received">some text</div>
+                        <div class="received">some text</div>
+                        <div class="received">some text</div>
+                        <div class="received">some text</div>
+                        <div class="received">some text</div>
+                        <div class="received">some text</div>
+                    </div>
+                    <div class="form">
+                        <input type="text" name="message" placeholder="typehere" id="chat-message-input">
+                        <input type="button" id="send-button" value="Send">
+                    </div>
+                        
+                    
+                </div>
+                <div class="btn"><i class="fas fa-biohazard"></i></div>    
+            <%}%>
         </aside>
         <div class="two"><%- body%></div>
         
     </div>
     <%- include('_footer')%>
+    <script src="/js/click.js"></script>
+    <script src="https://cdn.socket.io/4.4.0/socket.io.min.js" integrity="sha384-1fOn6VtTq3PWwfsOrk45LnYcGosJwzMHv+Xh/Jx5303FVOXzEnw0EpLv30mtjmlj" crossorigin="anonymous"></script>
+    <script src="/js/chat_engine.js"></script>
+    <%if(locals.user){%>
+        <script>
+            new ChatEngine('user-chat-box', '<%= locals.user.email%>')
+        </script>
+    <%}%>
     <script>
         <% if(flash.success && flash.success.length > 0){%>
             new Noty({
@@ -54,5 +92,6 @@
             }).show();
         <%}%>
     </script>
+    
 </body>
 </html>

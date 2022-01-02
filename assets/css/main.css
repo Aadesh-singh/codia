@@ -1,6 +1,13 @@
 body {
   margin: 0px;
   padding: 0px; }
+  body ::-webkit-scrollbar {
+    width: 10px;
+    background: white;
+    color: orange; }
+
+.visible {
+  opacity: 0; }
 
 main {
   min-height: 69vh;
@@ -59,6 +66,65 @@ aside {
         left: -19px; }
       .one ul li a.signout:hover {
         background-color: red; }
+  .one .chat-box {
+    height: 324px;
+    width: 342px;
+    border: 2px solid orange;
+    box-shadow: 2px 0px 8px black;
+    background: white;
+    z-index: 10;
+    position: relative;
+    top: -40px; }
+    .one .chat-box .chat {
+      height: 90%;
+      scroll-behavior: revert;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      padding: 10px 25px; }
+    .one .chat-box .received {
+      padding: 4px 19px;
+      width: fit-content;
+      box-shadow: 2px 0px 8px black;
+      background: black;
+      font-size: 1.1rem;
+      color: white;
+      border-radius: 5px;
+      position: relative;
+      left: -8px;
+      top: 5px;
+      margin: 11px 0px; }
+    .one .chat-box .sent {
+      padding: 4px 19px;
+      width: fit-content;
+      box-shadow: 2px 0px 8px black;
+      background: orange;
+      font-size: 1.1rem;
+      color: white;
+      border-radius: 5px;
+      position: relative;
+      right: -190px;
+      top: 5px;
+      margin: 11px 0px; }
+    .one .chat-box .form {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      bottom: 26px;
+      margin: 15px 0px; }
+      .one .chat-box .form input[type="text"] {
+        width: 240px;
+        padding: 3px 60px 2px 7px;
+        font-size: 1.1rem; }
+  .one .btn {
+    color: orange;
+    font-size: 2rem;
+    position: absolute;
+    bottom: -17px;
+    box-shadow: 3px 3px 24px black;
+    border-radius: 50%;
+    background: black;
+    padding: 4px;
+    cursor: pointer; }
 
 .two {
   width: 50%;
