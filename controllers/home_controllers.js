@@ -21,12 +21,22 @@ module.exports.home = async function(req, res){
             }
         }).populate('likes');
 
-        let users = await User.find({});
-
+        let users = await User.find({})
+        
+        if(req.user){
+            var fuser = await User.findById(req.user.id)
+            .populate({
+                path: 'friends',
+                populate: {
+                    path: 'to_user'
+                }
+            })
+        }
         return res.render('hello.ejs', {
             AllPosts: posts,
             user: req.user,
-            all_Users: users
+            all_Users: users,
+            fUser: fuser
         });            
     } catch(err){
         console.log("Error: ", err);

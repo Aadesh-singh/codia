@@ -10,9 +10,19 @@ const forgetPasswordMailer = require('../mail/forgetPasswordTokenMailer');
 module.exports.profile = async function(req, res){
     try {
         const user = await User.findById(req.params.id);
-
+        if(req.user){
+            var fuser = await User.findById(req.user.id)
+            .populate({
+                path: 'friends',
+                populate: {
+                    path: 'to_user'
+                }
+            })
+            console.log(fuser);
+        }
         return res.render('user_profile.ejs', {
-            profile_user: user
+            profile_user: user,
+            fUser: fuser
         });
     } catch (err) {
         req.flash('error', err);

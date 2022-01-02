@@ -27,8 +27,29 @@
                 <input type="file" name="avatar" id="" placeholder="Profile Picture">
                 <input type="submit" value="Update">
             </form>
+        <%} else{%>
+            <%if(fUser.friends.length != 0){%>
+                <%for(u of fUser.friends){%>
+                    <%if(u.to_user.id == profile_user.id){%>
+                        <a href="/friends/remove-friend/<%= profile_user.id%>">Remove Friend</a>    
+                    <%}else {%>
+                        <a href="/friends/add-friend/<%= profile_user.id%>">Add Friend</a>
+                    <%}%>
+                <%}%>
+            <%} else {%>
+                <a href="/friends/add-friend/<%= profile_user.id%>">Add Friend</a>
+            <%}%>
         <%}%>
         
     </main>
 </body>
+<script>
+    function findFriend(arr, pId){
+        arr.forEach(f => {
+            if(f.to_user == pId){
+                return f._id;
+            }
+        });
+    }
+</script>
 </html>

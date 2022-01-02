@@ -26,10 +26,18 @@
         </section>
         <% if(locals.user){%>
             <aside class="three">
-                <div >hello3</div>
-                <% for(u of all_Users) {%>
-                    <%- include('_friends')%>
-                <%}%>
+                <div class="friends">
+                    <div>Friends</div>
+                    <%for(u of fUser.friends){%>
+                        <%- include('_friends')%>
+                    <%}%>
+                </div>
+                <div class="allusers">
+                    <div >All Users</div>
+                    <% for(u of all_Users) {%>
+                        <%- include('_users')%>
+                    <%}%>
+                </div>
             </aside>
         <%}%>
     </main>

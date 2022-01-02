@@ -1,3 +1,4 @@
 <p>
-    <a href="/user/profile/<%= u.id%>"><%= u.name%></a>
-</p>     
+    <%=u.to_user.name%>
+    <a href="/friends/remove-friend/<%= u.to_user._id%>"><i class="fas fa-user-slash"></i></a>
+</p>

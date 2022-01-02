@@ -20,6 +20,7 @@ const MongoStore = require('connect-mongo');
 const { Mongoose } = require('mongoose');
 
 const sassMiddleware = require('node-sass-middleware-5');
+// const sassMiddleware = require('node-sass');
 const flash = require('connect-flash');
 const middleware = require('./config/middleware');
 

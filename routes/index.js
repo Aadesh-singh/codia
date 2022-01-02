@@ -15,6 +15,8 @@ router.use('/comments', require('./comments'));
 // action route for likes
 router.use('/likes', require('./likes'));
 
+//action route for Friends
+router.use('/friends', require('./friends'));
 // for api
 router.use('/api', require('./api'));
 

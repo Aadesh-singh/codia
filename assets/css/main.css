@@ -68,6 +68,15 @@ aside {
   position: fixed;
   top: 100px;
   right: 49px; }
+  .three .allusers {
+    height: 282px;
+    overflow-y: scroll; }
+  .three .friends {
+    height: 198px;
+    border-bottom: 1px solid orange;
+    overflow-y: scroll;
+    margin-bottom: 14px;
+    padding-bottom: 16px; }
 
 #feed-posts h4 {
   font-size: 1.4rem; }
