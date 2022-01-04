@@ -1,0 +1,19 @@
+header {
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  padding: 14px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  font-size: 1.3rem;
+  background: #e8a14b; }
+  header ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+    list-style: none;
+    position: relative;
+    right: 30px; }

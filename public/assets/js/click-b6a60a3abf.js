@@ -1,0 +1,1 @@
+let chatBoxBtn=$(".btn"),chatBox=$(".chat-box");chatBoxBtn.click((function(){chatBox.toggleClass("visible")}));

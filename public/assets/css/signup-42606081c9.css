@@ -1,0 +1,18 @@
+main form {
+  display: flex;
+  flex-direction: column;
+  margin: 73px 65px;
+  width: 71%;
+  justify-content: space-between;
+  height: 32vh; }
+  main form input[type="text"],
+  main form input[type="email"],
+  main form input[type="password"] {
+    padding: 6px;
+    font-size: 1rem; }
+  main form input[type="submit"] {
+    background: orange;
+    border: 2px solid orange;
+    cursor: pointer;
+    color: white;
+    padding: 6px; }
