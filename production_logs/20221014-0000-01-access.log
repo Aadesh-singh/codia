@@ -1,0 +1,124 @@
+::1 - - [06/Jul/2022:19:20:28 +0000] "GET / HTTP/1.1" 200 6741 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+::1 - - [06/Jul/2022:19:20:29 +0000] "GET /favicon.ico HTTP/1.1" 404 150 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+::1 - - [06/Jul/2022:19:20:34 +0000] "GET /user/sign-in HTTP/1.1" 200 3097 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+::1 - - [06/Jul/2022:19:20:40 +0000] "POST /user/create-session HTTP/1.1" 302 46 "http://localhost:8000/user/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+::1 - - [06/Jul/2022:19:20:40 +0000] "GET / HTTP/1.1" 200 12124 "http://localhost:8000/user/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+::1 - - [06/Jul/2022:19:20:56 +0000] "GET /user/profile/61d102feb181a690cd459c29 HTTP/1.1" 200 5849 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+::1 - - [06/Jul/2022:19:21:01 +0000] "GET / HTTP/1.1" 200 11882 "http://localhost:8000/user/profile/61d102feb181a690cd459c29" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+::1 - - [06/Jul/2022:19:21:11 +0000] "GET /user/profile/61d189b8e0af44323fe12e0e HTTP/1.1" 200 5570 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+::1 - - [06/Jul/2022:19:21:15 +0000] "GET /friends/add-friend/61d189b8e0af44323fe12e0e HTTP/1.1" 302 46 "http://localhost:8000/user/profile/61d189b8e0af44323fe12e0e" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+::1 - - [06/Jul/2022:19:21:15 +0000] "GET / HTTP/1.1" 200 12059 "http://localhost:8000/user/profile/61d189b8e0af44323fe12e0e" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+::1 - - [06/Jul/2022:19:21:17 +0000] "GET /friends/remove-friend/61d189b8e0af44323fe12e0e HTTP/1.1" 302 46 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+::1 - - [06/Jul/2022:19:21:17 +0000] "GET / HTTP/1.1" 200 11882 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+::1 - - [06/Jul/2022:20:13:10 +0000] "POST /posts/create HTTP/1.1" 200 305 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+::1 - - [06/Jul/2022:20:13:13 +0000] "POST /likes/toggle/?id=62c5ecd69cf17ea473674dd7&type=Post HTTP/1.1" 200 57 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+::1 - - [06/Jul/2022:20:13:14 +0000] "POST /likes/toggle/?id=62c5ecd69cf17ea473674dd7&type=Post HTTP/1.1" 200 56 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+::1 - - [06/Jul/2022:20:13:15 +0000] "POST /likes/toggle/?id=62c5ecd69cf17ea473674dd7&type=Post HTTP/1.1" 200 57 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+::1 - - [06/Jul/2022:20:13:15 +0000] "POST /likes/toggle/?id=62c5ecd69cf17ea473674dd7&type=Post HTTP/1.1" 200 56 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+::1 - - [06/Jul/2022:20:13:20 +0000] "POST /comments/create HTTP/1.1" 200 374 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+::1 - - [06/Jul/2022:20:13:27 +0000] "POST /likes/toggle/?id=62c5ece09cf17ea473674df8&type=Comment HTTP/1.1" 200 57 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+::1 - - [06/Jul/2022:20:13:28 +0000] "POST /likes/toggle/?id=62c5ece09cf17ea473674df8&type=Comment HTTP/1.1" 200 56 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+::1 - - [06/Jul/2022:20:13:51 +0000] "GET /user/sign-out HTTP/1.1" 302 46 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+::1 - - [06/Jul/2022:20:13:51 +0000] "GET / HTTP/1.1" 200 8261 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+::1 - - [06/Jul/2022:20:14:05 +0000] "GET /user/sign-up HTTP/1.1" 200 3313 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+::1 - - [06/Jul/2022:20:14:08 +0000] "GET /user/auth/google HTTP/1.1" 302 0 "http://localhost:8000/user/sign-up" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+[0mGET / [32m200[0m 270.002 ms - 7932[0m
+[0mGET /favicon.ico [33m404[0m 15.081 ms - 150[0m
+[0mGET /user/sign-in [32m200[0m 14.919 ms - 3031[0m
+[0mGET /user/auth/google [36m302[0m 5.628 ms - 0[0m
+[0mGET /user/auth/google/callback?code=4%2F0ARtbsJoQT6dTMFyjNwJti8ooIyEKVOYYiJH2D6xirppPRPj5_F_IEUqef0BwSvQsH97gjg&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=consent [36m302[0m 539.691 ms - 46[0m
+[0mGET / [32m200[0m 96.238 ms - 13836[0m
+[0mGET /user/profile/61d10284b181a690cd459c13 [32m200[0m 75.420 ms - 5538[0m
+[0mGET / [32m200[0m 93.627 ms - 13594[0m
+[0mGET /user/profile/61d102feb181a690cd459c29 [32m200[0m 57.235 ms - 5236[0m
+[0mGET /friends/add-friend/61d102feb181a690cd459c29 [36m302[0m 139.213 ms - 46[0m
+[0mGET / [32m200[0m 144.068 ms - 13767[0m
+[0mGET /friends/remove-friend/61d102feb181a690cd459c29 [36m302[0m 37.078 ms - 46[0m
+[0mGET / [32m200[0m 68.620 ms - 13594[0m
+[0mPOST /likes/toggle/?id=62c5ecd69cf17ea473674dd7&type=Post [32m200[0m 26.369 ms - 57[0m
+[0mPOST /likes/toggle/?id=61d102ccb181a690cd459c19&type=Post [32m200[0m 20.883 ms - 56[0m
+[0mPOST /likes/toggle/?id=61d102ccb181a690cd459c19&type=Post [32m200[0m 19.297 ms - 57[0m
+[0mPOST /likes/toggle/?id=61d1327d936de31671a75b93&type=Comment [32m200[0m 19.098 ms - 57[0m
+[0mPOST /likes/toggle/?id=61d1327d936de31671a75b93&type=Comment [32m200[0m 16.008 ms - 56[0m
+[0mPOST /likes/toggle/?id=61d1327d936de31671a75b93&type=Comment [32m200[0m 16.337 ms - 57[0m
+[0mPOST /likes/toggle/?id=61d18a5ee0af44323fe12ede&type=Comment [32m200[0m 21.537 ms - 57[0m
+[0mPOST /likes/toggle/?id=61d18a5ee0af44323fe12ede&type=Comment [32m200[0m 12.954 ms - 56[0m
+[0mPOST /likes/toggle/?id=61d1327d936de31671a75b93&type=Comment [32m200[0m 12.042 ms - 56[0m
+[0mPOST /comments/create [32m200[0m 20.950 ms - 380[0m
+[0mPOST /likes/toggle/?id=632d65f8d1d672d8cd2dc6eb&type=Comment [32m200[0m 11.064 ms - 57[0m
+[0mPOST /likes/toggle/?id=632d65f8d1d672d8cd2dc6eb&type=Comment [32m200[0m 14.069 ms - 56[0m
+[0mGET / [32m200[0m 110.415 ms - 14492[0m
+[0mGET /user/profile/61d10284b181a690cd459c13 [36m304[0m 101.322 ms - -[0m
+[0mPOST /user/update/61d10284b181a690cd459c13 [36m302[0m 56.111 ms - 162[0m
+[0mGET /user/profile/61d10284b181a690cd459c13 [32m200[0m 24.675 ms - 6046[0m
+[0mGET / [32m200[0m 73.089 ms - 14631[0m
+[0mGET / [36m304[0m 96.602 ms - -[0m
+[0mGET / [32m200[0m 231.487 ms - 8507[0m
+[0mGET /favicon.ico [33m404[0m 14.861 ms - 150[0m
+[0mGET /user/sign-in [32m200[0m 17.474 ms - 3031[0m
+[0mGET /user/auth/google [36m302[0m 8.509 ms - 0[0m
+[0mGET /user/auth/google/callback?code=4%2F0ARtbsJr5uIcEapNeSTxL-MAHfxroxhcwI80hE8ZA8z7AwogYBSfjKrrTK4JgpdQEQdM-ew&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=consent [36m302[0m 530.988 ms - 46[0m
+[0mGET / [32m200[0m 138.680 ms - 14873[0m
+[0mGET / [32m200[0m 113.406 ms - 8507[0m
+[0mGET /user/sign-in [32m200[0m 54.451 ms - 3031[0m
+[0mGET /user/auth/google [36m302[0m 5.120 ms - 0[0m
+[0mPOST /user/create-session [36m302[0m 10.963 ms - 46[0m
+[0mGET / [32m200[0m 116.396 ms - 15042[0m
+[0mGET /user/profile/61d102feb181a690cd459c29 [32m200[0m 51.934 ms - 5375[0m
+[0mGET /friends/add-friend/61d102feb181a690cd459c29 [36m302[0m 65.873 ms - 46[0m
+[0mGET / [32m200[0m 226.844 ms - 14804[0m
+[0mGET / [32m200[0m 215.874 ms - 8507[0m
+[0mGET /favicon.ico [33m404[0m 19.238 ms - 150[0m
+[0mGET / [36m304[0m 97.940 ms - -[0m
+[0mGET /user/sign-in [32m200[0m 23.628 ms - 3031[0m
+[0mPOST /user/create-session [36m302[0m 16.538 ms - 46[0m
+[0mGET / [32m200[0m 84.907 ms - 15042[0m
+[0mPOST /posts/create [32m200[0m 45.692 ms - 310[0m
+[0mGET /user/profile/61d102feb181a690cd459c29 [32m200[0m 117.107 ms - 5772[0m
+[0mPOST /user/update/61d102feb181a690cd459c29 [36m302[0m 65.467 ms - 162[0m
+[0mGET /user/profile/61d102feb181a690cd459c29 [32m200[0m 70.241 ms - 6019[0m
+[0mGET / [32m200[0m 103.259 ms - 16185[0m
+[0mPOST /likes/toggle/?id=63484ba54d6d6ad3e959941c&type=Post [32m200[0m 30.816 ms - 57[0m
+[0mPOST /likes/toggle/?id=63484ba54d6d6ad3e959941c&type=Post [32m200[0m 18.044 ms - 56[0m
+[0mPOST /comments/create [32m200[0m 19.823 ms - 372[0m
+[0mPOST /likes/toggle/?id=63484bdd4d6d6ad3e9599447&type=Comment [32m200[0m 37.910 ms - 57[0m
+[0mPOST /likes/toggle/?id=63484bdd4d6d6ad3e9599447&type=Comment [32m200[0m 13.522 ms - 56[0m
+[0mPOST /likes/toggle/?id=61d18a2fe0af44323fe12ed9&type=Post [32m200[0m 15.714 ms - 56[0m
+[0mPOST /likes/toggle/?id=61d18a2fe0af44323fe12ed9&type=Post [32m200[0m 17.564 ms - 57[0m
+[0mGET /user/profile/61d189b8e0af44323fe12e0e [32m200[0m 58.442 ms - 5494[0m
+[0mGET /friends/add-friend/61d189b8e0af44323fe12e0e [36m302[0m 68.890 ms - 46[0m
+[0mGET / [32m200[0m 100.747 ms - 17258[0m
+[0mGET /friends/remove-friend/61d189b8e0af44323fe12e0e [36m302[0m 63.414 ms - 46[0m
+[0mGET / [32m200[0m 235.974 ms - 17081[0m
+[0mGET /user/sign-out [36m302[0m 12.224 ms - 46[0m
+[0mGET / [32m200[0m 81.616 ms - 10032[0m
+[0mGET /user/sign-in [36m304[0m 20.229 ms - -[0m
+[0mGET /user/auth/google [36m302[0m 10.465 ms - 0[0m
+[0mGET /user/auth/google/callback?code=4%2F0ARtbsJrOGII_M2yTMz0eTZ_KPrary3zt29JU1tm9WPmRXsGVr0vEKr9krF2TDebckIeMFQ&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=consent [36m302[0m 476.404 ms - 46[0m
+[0mGET / [32m200[0m 164.490 ms - 16998[0m
+[0mPOST /likes/toggle/?id=63484ba54d6d6ad3e959941c&type=Post [32m200[0m 20.091 ms - 57[0m
+[0mGET / [32m200[0m 110.263 ms - 16756[0m
+[0mPOST /likes/toggle/?id=63484ba54d6d6ad3e959941c&type=Post [32m200[0m 18.253 ms - 56[0m
+[0mGET /user/sign-out [36m302[0m 10.901 ms - 46[0m
+[0mGET / [32m200[0m 59.756 ms - 10032[0m
+[0mGET /user/sign-in [36m304[0m 8.808 ms - -[0m
+[0mGET /user/sign-up [32m200[0m 16.203 ms - 3247[0m
+[0mPOST /user/create [36m302[0m 18.276 ms - 70[0m
+[0mGET /user/sign-in [32m200[0m 7.796 ms - 3278[0m
+[0mPOST /user/create-session [36m302[0m 9.562 ms - 46[0m
+[0mGET / [32m200[0m 48.229 ms - 16149[0m
+[0mPOST /posts/create [32m200[0m 13.951 ms - 322[0m
+[0mGET / [32m200[0m 59.694 ms - 10499[0m
+[0mGET /user/sign-up [32m200[0m 7.813 ms - 3247[0m
+[0mPOST /user/create [36m302[0m 13.756 ms - 70[0m
+[0mGET /user/sign-in [32m200[0m 7.014 ms - 3278[0m
+[0mPOST /user/create-session [36m302[0m 9.560 ms - 46[0m
+[0mGET / [32m200[0m 61.175 ms - 17506[0m
+[0mGET /user/profile/63484e4f4d6d6ad3e95994c3 [32m200[0m 34.049 ms - 5125[0m
+[0mGET /friends/add-friend/63484e4f4d6d6ad3e95994c3 [36m302[0m 23.163 ms - 46[0m
+[0mGET / [32m200[0m 85.569 ms - 17435[0m
+[0mGET /user/profile/63484f2e4d6d6ad3e95994db [32m200[0m 39.560 ms - 5541[0m
+[0mGET / [36m304[0m 73.414 ms - -[0m
+[0mPOST /likes/toggle/?id=63484ed84d6d6ad3e95994d0&type=Post [32m200[0m 16.950 ms - 57[0m
+[0mPOST /comments/create [32m200[0m 16.787 ms - 381[0m
+[0mPOST /posts/create [32m200[0m 72.499 ms - 311[0m
