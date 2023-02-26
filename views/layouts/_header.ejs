@@ -1,9 +1,11 @@
 <header>
-    <div><a href="/">Codia <sub>A new Social Media</sub></a></div>
+    <div><a href="/">DevCom</a></div>
     <ul>
         <% if(locals.user) { %>
             <% if(user.avatar){%>
-                <img src="<%= user.avatar%>" alt="Avatar Image" width="40" height="30">
+                <div>
+                    <img src="<%= user.avatar%>" alt="Avatar Image" width="40" height="30">
+                </div>
             <%}%>
             <li><a href="/user/profile/<%= user._id%>"><%= user.name%></a></li>
             <li><a href="/user/sign-out">Sign-Out</a></li>

@@ -96,3 +96,10 @@ app.listen(port, function(err){
     }
     console.log(`Server is up and running at port: ${port}`);
 });
+// app.listen(port, function(err){
+//     if(err){
+//         console.log(`Error in loading the server: ${err}`);
+//         return;
+//     }
+//     console.log(`Server is up and running at port: ${port}`);
+// });

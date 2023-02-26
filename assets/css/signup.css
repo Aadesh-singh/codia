@@ -11,8 +11,22 @@ main form {
     padding: 6px;
     font-size: 1rem; }
   main form input[type="submit"] {
-    background: orange;
-    border: 2px solid orange;
+    background: #645CBB;
+    border: 2px solid #645CBB;
     cursor: pointer;
     color: white;
     padding: 6px; }
+
+main p a {
+  text-decoration: none;
+  text-transform: capitalize;
+  color: red; }
+
+main .google-login {
+  margin: 0px;
+  border: 2px solid black;
+  padding: 7px 48px;
+  border-radius: 6px;
+  color: black !important; }
+  main .google-login a {
+    color: black !important; }

@@ -2,7 +2,7 @@
     <p>
         <div class="comments-parent">
             <small>
-                <span class="name"><%= comment.user.name%></span>
+                <span style="text-transform: capitalize;" class="name"><%= comment.user.name%></span>
                 <span class="dateTime">
                     <% if(locals.user){%>
                         <a id="like-<%= comment._id%>" data-likes="<%= comment.likes.length %>" class="like" href="/likes/toggle/?id=<%= comment._id%>&type=Comment">

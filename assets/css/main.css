@@ -4,7 +4,7 @@ body {
   body ::-webkit-scrollbar {
     width: 10px;
     background: white;
-    color: orange; }
+    color: #A084DC; }
 
 .visible {
   opacity: 0; }
@@ -12,7 +12,7 @@ body {
 main {
   min-height: 69vh;
   font-size: 1.3rem;
-  border: 2px solid orange;
+  border: 2px solid #A084DC;
   padding: 40px 40px;
   background-color: #f6f6f6;
   margin-bottom: 29px;
@@ -41,14 +41,14 @@ aside {
       width: 142px;
       padding: 8px 18px; }
       .one ul li a {
-        border: 2px solid orange;
+        border: 2px solid #A084DC;
         width: 100%;
         text-decoration: none;
         padding: 11px 38px;
-        color: orange; }
+        color: #A084DC; }
       .one ul li a:hover {
         color: white !important;
-        background-color: orange; }
+        background-color: #A084DC; }
       .one ul li a.home {
         padding: 9px 81px 9px 59px;
         position: relative;
@@ -69,7 +69,7 @@ aside {
   .one .chat-box {
     height: 324px;
     width: 342px;
-    border: 2px solid orange;
+    border: 2px solid #A084DC;
     box-shadow: 2px 0px 8px black;
     background: white;
     z-index: 10;
@@ -92,19 +92,32 @@ aside {
       position: relative;
       left: -8px;
       top: 5px;
-      margin: 11px 0px; }
+      margin: 6px -4px;
+      max-width: 174px;
+      display: flex;
+      flex-direction: column;
+      min-height: 69px; }
+      .one .chat-box .received sub {
+        font-size: 0.5rem;
+        margin: 13px 0px; }
     .one .chat-box .sent {
       padding: 4px 19px;
       width: fit-content;
       box-shadow: 2px 0px 8px black;
-      background: orange;
+      background: #A084DC;
       font-size: 1.1rem;
       color: white;
       border-radius: 5px;
       position: relative;
       right: -190px;
       top: 5px;
-      margin: 11px 0px; }
+      margin: 6px -116px;
+      max-width: 187px; }
+      .one .chat-box .sent span {
+        display: flex;
+        flex-direction: column; }
+      .one .chat-box .sent sub {
+        font-size: 8px; }
     .one .chat-box .form {
       display: flex;
       justify-content: center;
@@ -116,7 +129,7 @@ aside {
         padding: 3px 60px 2px 7px;
         font-size: 1.1rem; }
   .one .btn {
-    color: orange;
+    color: #A084DC;
     font-size: 2rem;
     position: absolute;
     bottom: -17px;
@@ -137,9 +150,15 @@ aside {
   .three .allusers {
     height: 282px;
     overflow-y: scroll; }
+    .three .allusers p a {
+      text-decoration: none;
+      text-transform: capitalize;
+      color: black; }
+    .three .allusers p a:hover {
+      color: #A084DC; }
   .three .friends {
     height: 198px;
-    border-bottom: 1px solid orange;
+    border-bottom: 1px solid #A084DC;
     overflow-y: scroll;
     margin-bottom: 14px;
     padding-bottom: 16px; }
@@ -151,12 +170,12 @@ aside {
   display: flex; }
   #feed-posts form textarea {
     border-radius: 8px 0px 0px 7px;
-    border: 2px solid orange;
+    border: 2px solid #A084DC;
     border-right: 0; }
   #feed-posts form input[type="submit"] {
     border-radius: 0px 8px 7px 0px;
-    border: 2px solid orange;
-    background-color: orange;
+    border: 2px solid #A084DC;
+    background-color: #A084DC;
     color: white; }
 
 #post-container ul {
@@ -170,9 +189,10 @@ aside {
     border-radius: 13px; }
   #post-container ul .post-parent {
     position: relative;
-    border: 2px solid orange;
+    border: 2px solid #A084DC;
     padding: 9px 6px 70px 6px;
-    border-radius: 13px; }
+    border-radius: 13px;
+    margin: 7px 0px; }
     #post-container ul .post-parent small {
       display: flex;
       justify-content: space-between;
@@ -187,23 +207,23 @@ aside {
         align-items: center; }
         #post-container ul .post-parent small .dateTime a {
           font-size: 1.1rem;
-          color: orange; }
+          color: #A084DC; }
   #post-container ul .un-auth-like {
     font-size: 1rem;
-    color: orange;
+    color: #A084DC;
     border: 2px solid;
     position: relative;
     width: fit-content;
     padding: 1px 4px;
     top: 8px; }
   #post-container ul a.like {
-    color: orange;
+    color: #BFACE2;
     border: 2px solid;
     padding: 2px 8px;
     font-size: 0.9rem;
     text-decoration: none; }
   #post-container ul a.liked {
-    background: orange;
+    background: #A084DC;
     color: white !important; }
   #post-container ul .comment-container ul {
     list-style: none; }
@@ -213,7 +233,7 @@ aside {
       margin: 0;
       min-height: 63px; }
       #post-container ul .comment-container ul li .comments-parent {
-        border: 1px solid black;
+        border: 2px solid #EBC7E6;
         padding: 7px 4px;
         border-radius: 6px;
         zoom: 0.8;
@@ -230,10 +250,10 @@ aside {
             align-items: center; }
             #post-container ul .comment-container ul li .comments-parent small .dateTime a {
               font-size: 0.89rem;
-              color: orange; }
+              color: #A084DC; }
             #post-container ul .comment-container ul li .comments-parent small .dateTime div {
               font-size: 0.8rem;
-              color: orange;
+              color: #A084DC;
               border: 2px solid;
               position: relative;
               width: fit-content;
@@ -243,7 +263,7 @@ aside {
     width: 83%;
     margin-top: 20px;
     border-radius: 8px 0px 0px 7px;
-    border: 2px solid orange;
+    border: 2px solid #A084DC;
     border-right: 0; }
   #post-container ul input[type="submit"] {
     margin-top: 20px; }

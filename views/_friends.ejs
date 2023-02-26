@@ -1,4 +1,8 @@
 <p>
-    <%=u.to_user.name%>
-    <a href="/friends/remove-friend/<%= u.to_user._id%>"><i class="fas fa-user-slash"></i></a>
+    <div style="display: flex; justify-content: space-between; width: 145px;">
+        <div style="text-transform: capitalize;">
+            <%=u.to_user.name%>
+        </div>
+        <a href="/friends/remove-friend/<%= u.to_user._id%>"><i class="fas fa-user-slash"></i></a>
+    </div>
 </p>
